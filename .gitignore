@@ -1,31 +1,128 @@
-# Built things
-_Debug/
-Compiled/
+# ============================================
+# Sistema Operativo
+# ============================================
 
-# AudioCache can be rebuilt from sources
-AudioCache/
+# macOS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+.AppleDouble
+.LSOverride
+Icon
 
-# Lockfile
-_OpenInEditor.lock
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+Desktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk
 
-# User settings
-Game.agf.user
-*.crm.user
+# Linux
+*~
+.directory
+.Trash-*
 
-# Backups
-Game.agf.bak
-backup_acsprset.spr
+# ============================================
+# Editores e IDEs
+# ============================================
 
-# Memory dumps
-*.dmp
+# Visual Studio Code
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
 
-# Temporary files
-# temporarily created during sprite or room background compression
-~aclzw.tmp
-# temporary, main game data, before getting packed into exe
-game28.dta
-# temporary build of the game before being moved to Compiled/ folder
-*.exe
+# JetBrains (WebStorm, IntelliJ, etc.)
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
 
-# Log files
-warnings.log
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+*.swp
+*.swo
+*~
+.netrwhist
+
+# Emacs
+*~
+\#*\#
+.\#*
+
+# ============================================
+# Logs y Archivos Temporales
+# ============================================
+
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+.pnpm-debug.log*
+
+*.tmp
+*.temp
+*.cache
+.cache/
+
+# ============================================
+# Dependencias (por si en el futuro agregas alguna)
+# ============================================
+
+node_modules/
+jspm_packages/
+bower_components/
+
+# ============================================
+# Build y Distribución (si en el futuro usas build tools)
+# ============================================
+
+dist/
+build/
+out/
+*.min.js
+*.min.css
+*.map
+
+# ============================================
+# Variables de Entorno (si en el futuro agregas backend)
+# ============================================
+
+.env
+.env.local
+.env.*.local
+.env.production
+.env.development
+
+# ============================================
+# Archivos de Backup
+# ============================================
+
+*.bak
+*.backup
+*.old
+*.orig
+
+# ============================================
+# Configuración Personal
+# ============================================
+
+# Configuraciones locales del usuario
+config.local.js
+settings.local.json
