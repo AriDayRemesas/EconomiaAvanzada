@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de País - Gestión Nacional</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+    <div class="game-container">
+        <!-- Header -->
+        <header class="game-header">
+            <h1>Simulador de País</h1>
+            <div class="game-controls">
+                <div class="time-controls">
+                    <button id="pause-btn" class="btn btn-control">⏸ Pausa</button>
+                    <button id="play-btn" class="btn btn-control active">▶ Normal</button>
+                    <button id="speed2-btn" class="btn btn-control">⏩ x2</button>
+                    <button id="speed4-btn" class="btn btn-control">⏩⏩ x4</button>
+                </div>
+                <div class="date-display">
+                    <span id="current-date">Año 1, Mes 1, Día 1</span>
+                </div>
+                <div class="save-controls">
+                    <button id="save-btn" class="btn btn-primary">💾 Guardar</button>
+                    <button id="load-btn" class="btn btn-secondary">📂 Cargar</button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <nav class="main-nav">
+                    <button class="nav-btn active" data-panel="dashboard">
+                        <span>📊</span> Panel Principal
+                    </button>
+                    <button class="nav-btn" data-panel="economy">
+                        <span>💰</span> Economía
+                    </button>
+                    <button class="nav-btn" data-panel="population">
+                        <span>👥</span> Población
+                    </button>
+                    <button class="nav-btn" data-panel="politics">
+                        <span>🏛️</span> Política
+                    </button>
+                    <button class="nav-btn" data-panel="research">
+                        <span>🔬</span> Investigación
+                    </button>
+                    <button class="nav-btn" data-panel="resources">
+                        <span>⚡</span> Recursos
+                    </button>
+                    <button class="nav-btn" data-panel="infrastructure">
+                        <span>🏗️</span> Infraestructura
+                    </button>
+                    <button class="nav-btn" data-panel="events">
+                        <span>📰</span> Eventos
+                    </button>
+                </nav>
+            </aside>
+
+            <!-- Main Panel Area -->
+            <main class="main-panel">
+                <!-- Dashboard Panel -->
+                <div id="dashboard-panel" class="panel active">
+                    <div class="panel-header">
+                        <h2>Panel Principal</h2>
+                    </div>
+                    <div class="metrics-grid">
+                        <div class="metric-card">
+                            <div class="metric-label">PIB</div>
+                            <div class="metric-value" id="gdp-value">$0</div>
+                            <div class="metric-change" id="gdp-change">+0%</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-label">Población</div>
+                            <div class="metric-value" id="population-value">0</div>
+                            <div class="metric-change" id="population-change">+0%</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-label">Aprobación</div>
+                            <div class="metric-value" id="approval-value">50%</div>
+                            <div class="metric-change" id="approval-change">0%</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-label">Presupuesto</div>
+                            <div class="metric-value" id="budget-value">$0</div>
+                            <div class="metric-change" id="budget-change">$0</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-label">Felicidad</div>
+                            <div class="metric-value" id="happiness-value">50%</div>
+                            <div class="metric-change" id="happiness-change">0%</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-label">Calidad de Vida</div>
+                            <div class="metric-value" id="quality-value">50</div>
+                            <div class="metric-change" id="quality-change">0</div>
+                        </div>
+                    </div>
+                    <div class="charts-container">
+                        <div class="chart-box">
+                            <canvas id="gdp-chart"></canvas>
+                        </div>
+                        <div class="chart-box">
+                            <canvas id="population-chart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Other Panels -->
+                <div id="economy-panel" class="panel"></div>
+                <div id="population-panel" class="panel"></div>
+                <div id="politics-panel" class="panel"></div>
+                <div id="research-panel" class="panel"></div>
+                <div id="resources-panel" class="panel"></div>
+                <div id="infrastructure-panel" class="panel"></div>
+                <div id="events-panel" class="panel"></div>
+            </main>
+        </div>
+
+        <!-- Notifications -->
+        <div id="notifications-container" class="notifications-container"></div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/utils/helpers.js"></script>
+    <script src="js/utils/storage.js"></script>
+    <script src="js/systems/economy.js"></script>
+    <script src="js/systems/population.js"></script>
+    <script src="js/systems/politics.js"></script>
+    <script src="js/systems/research.js"></script>
+    <script src="js/systems/resources.js"></script>
+    <script src="js/systems/infrastructure.js"></script>
+    <script src="js/systems/events.js"></script>
+    <script src="js/ui/notifications.js"></script>
+    <script src="js/ui/dashboard.js"></script>
+    <script src="js/ui/panels.js"></script>
+    <script src="js/game.js"></script>
+</body>
+</html>
+
